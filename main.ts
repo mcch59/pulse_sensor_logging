@@ -7,10 +7,24 @@ input.onButtonPressed(Button.A, function () {
         )
         datalogger.log(datalogger.createCV("Pulse_Sensor_Data", pins.analogReadPin(AnalogPin.P2)))
     }
+    basic.showLeds(`
+        . # # # .
+        . . . # .
+        . . # . .
+        . . . . .
+        . . # . .
+        `)
 })
 input.onButtonPressed(Button.B, function () {
     datalogger.deleteLog()
     basic.showIcon(IconNames.Skull)
+    basic.showLeds(`
+        . # # # .
+        . . . # .
+        . . # . .
+        . . . . .
+        . . # . .
+        `)
 })
 let time_start = 0
 datalogger.setColumnTitles("Pulse_Sensor_Data")
